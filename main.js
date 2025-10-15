@@ -45,6 +45,10 @@ button.addEventListener('click', ()=>{
     spanChilometri.appendChild(testoChilometri);
     document.body.appendChild(spanChilometri);
 
-    console.log(prezzo); 
+    console.log('Prezzo '+ prezzo); 
+    console.log('Eta '+ eta);
+    console.log('km '+ chilometri);
+    
+    
 
 })
