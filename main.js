@@ -2,7 +2,6 @@
 //allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo. 
 //Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina 
 //(il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
-//Questo richiederà un minimo di ricerca.
 
 
 
@@ -24,11 +23,28 @@ button.addEventListener('click', ()=>{
     //Età del passeggero
     if (eta < 18) {
         prezzo = prezzo - (prezzo * 0.20);
+        
         //va applicato uno sconto del 20% per i minorenni
     }else if (eta > 65) {
         //va applicato uno sconto del 40% per gli over 65.
         prezzo = prezzo - (prezzo * 0.40);
     }
-    console.log(prezzo);
-    
+
+    let spanPrezzo = document.createElement('span');
+    let testoPrezzo = document.createTextNode(Math.round(prezzo)+ '€');
+    spanPrezzo.appendChild(testoPrezzo);
+    document.body.appendChild(spanPrezzo);
+
+    let spanEta = document.createElement('span');
+    let testoEta = document.createTextNode(eta + ' anni');
+    spanEta.appendChild(testoEta);
+    document.body.appendChild(spanEta);
+
+    let spanChilometri = document.createElement('span');
+    let testoChilometri = document.createTextNode(chilometri+ ' km');
+    spanChilometri.appendChild(testoChilometri);
+    document.body.appendChild(spanChilometri);
+
+    console.log(prezzo); 
+
 })
